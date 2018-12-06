@@ -26,7 +26,7 @@ Overview
 
 ---------->Class that handles user I/O.
 
-###------>mainPackage
+### ------>mainPackage
 
 ###### -------->FaceNormal
 
@@ -49,10 +49,15 @@ Overview
 ---------->Class holding xyz coords.
 ###### ---->tmp
 ------>fluff
+
 ---->.classpath
+
 ------>fluff
+
 ---->.project
+
 ------>fluff
+
 #### >JOML - Java open math library
 -->Purpose: This directory contains the joml library in a maven project. Import the project for use as Joml library. Will need to delete sections of pom.xml. They will show up as errors after importing maven project.
 Put this imported project in classpath.
@@ -65,5 +70,5 @@ Put this imported project in classpath.
 #### appdb.sql
 -->Purpose: The database to load into the Ubuntu (or any really that run PHP) server for the program to get files from.
 
-##Things To Do on startup
+## Things To Do on startup
 1. Check that vm holding sql tables ifconfig address is correct in src code.
