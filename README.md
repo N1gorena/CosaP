@@ -20,19 +20,32 @@ Overview
 ###### ---->bin
 ------>binary fluff.
 ###### ---->src
-** ------>guiPackage **
+**------>guiPackage**
+
 -------->StrokeListener
+
 ---------->Class that handles user I/O.
-** ------>mainPackage **
+
+**------>mainPackage**
+
 -------->FaceNormal
+
 ---------->Class holding normal vector
+
 -------->ModelObject
+
 ---------->Class representing a 3d model
+
 -------->ObjectFace
+
 ---------->Class representing 3 vertices that make a face.
+
 -------->StaticClass
+
 ---------->Main class, main method.
+
 -------->Vertice
+
 ---------->Class holding xyz coords.
 ###### ---->tmp
 ------>fluff
