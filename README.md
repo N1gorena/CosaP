@@ -72,3 +72,4 @@ Put this imported project in classpath.
 
 ## Things To Do on startup
 1. Check that vm holding sql tables ifconfig address is correct in src code.
+2. Setup classpath for SWT, JOML, JOGL.
