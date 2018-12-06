@@ -20,13 +20,13 @@ Overview
 ##### ---->bin
 ------>binary fluff.
 ##### ---->src
-__------>guiPackage__
+### ------>guiPackage
 
 ###### -------->StrokeListener
 
 ---------->Class that handles user I/O.
 
-**------>mainPackage**
+###------>mainPackage
 
 ###### -------->FaceNormal
 
