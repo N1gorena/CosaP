@@ -13,38 +13,38 @@ Overview
 -->Purpose: Eclipse Workspace. Nothing to concern self with.
 #### >Hello Triangle
 -->Purpose: Eclipse project. Source of the program. Everything built around this.
-###### ---->.settings
+##### ---->.settings
 ------>Eclipse fluff.
-###### ---->Shaders
+##### ---->Shaders
 ------>Directory for shader program src files.
-###### ---->bin
+##### ---->bin
 ------>binary fluff.
-###### ---->src
-**------>guiPackage**
+##### ---->src
+__------>guiPackage__
 
--------->StrokeListener
+###### -------->StrokeListener
 
 ---------->Class that handles user I/O.
 
 **------>mainPackage**
 
--------->FaceNormal
+###### -------->FaceNormal
 
 ---------->Class holding normal vector
 
--------->ModelObject
+###### -------->ModelObject
 
 ---------->Class representing a 3d model
 
--------->ObjectFace
+###### -------->ObjectFace
 
 ---------->Class representing 3 vertices that make a face.
 
--------->StaticClass
+###### -------->StaticClass
 
 ---------->Main class, main method.
 
--------->Vertice
+###### -------->Vertice
 
 ---------->Class holding xyz coords.
 ###### ---->tmp
