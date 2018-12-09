@@ -71,5 +71,6 @@ Put this imported project in classpath.
 -->Purpose: The database to load into the Ubuntu (or any really that run PHP) server for the program to get files from.
 
 ## Things To Do on startup
-1. Check that vm holding sql tables ifconfig address is correct in src code.
-2. Setup classpath for SWT, JOML, JOGL.
+1. Setup vm.
+2. Make sure GWT is installed in eclipse
+3. Setup classpath for SWT, JOML, JOGL.
