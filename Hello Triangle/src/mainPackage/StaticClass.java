@@ -54,35 +54,42 @@ import static org.lwjgl.opengl.GL11.*;
 
 
 public class StaticClass {
+	
+	//Website string. The location of the Ubuntu Server at runtime. Using ifconfig address.
 	private static final String website = "http://192.168.1.166/";
+	//A List of the names of the files downloaded from the Server
 	private static LinkedList<String> modelFiles = new LinkedList<String>();
+	//Global array used by a model to pass data to Shaders.
 	private static int indices[] = {  // note that we start from 0!
 		    0, 1, 3,   // first triangle
 		    1, 2, 3    // second triangle
 		};
+	//Global variable that determines the color of the model being viewed.
 	private static Vector3f objectColor = new Vector3f(0.0f,1.0f,0.0f);
+	//Current Model. The model that is inProgress.
 	private static ModelObject inPro = new ModelObject();
-	
+	//Timer variables to update camera at 60fps
 	private static Timer tickTime = new Timer("Timer");
 	private static int tick = 0;
 	private static boolean tickIsGo = true;
 	
-	//VBO
+	//VBO, VAO, EBO
 	private static int perVertexData;
 	private static int VAO;
 	private static int indexOrderData;
 
+	//Main method.
 	public static void main(String[] args) {
 		System.out.println("Here We go...");
 		//MODEL LOADING
 		try {
-			//Connect to homebrew server. Download all models available. POST
+			//Connect to homebrew server. Download all models available. Use POST
 			URL serverPage = new URL("http://192.168.1.166/modelDump.php");
 			HttpURLConnection activeConnection = (HttpURLConnection) serverPage.openConnection();
 			activeConnection.setRequestMethod("POST");
 			activeConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
 			activeConnection.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-			
+			//Post the password.
 			String postParams = "password=alpastordetrack719";
 			
 			activeConnection.setDoOutput(true);
@@ -100,9 +107,9 @@ public class StaticClass {
 			//Prep JSON string
 			incomingString = incomingStream.readLine();
 			
-			//Parse string, creating files for models.
+			//Parse server JSON string with model file locations.
 			JSONObject json = new JSONObject(incomingString);
-			
+			//For every key, get the model name without extension, and use it with the Server location to download file.
 			Iterator<String> keyIt = json.keys();
 			while(keyIt.hasNext()) {
 				String daKey = (String) json.get(keyIt.next());
@@ -190,6 +197,7 @@ public class StaticClass {
 			comboBox.add(mFileSansExt[0],i);
 		}
 		comboBox.setText("sphere");
+		//Everytime a new object is selected, change model inProgress and parse the correct file for model data.
 		comboBox.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				File selectedFile = new File("tmp\\"+modelFiles.get(comboBox.getSelectionIndex()));
@@ -324,6 +332,7 @@ public class StaticClass {
 		//TODO remove
 		//GL30.glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		
+		//Default model file parse and prep for display.
 		File defaultFile = new File("tmp\\"+modelFiles.get(0));
 		inPro = new ModelObject();
 		try {
@@ -397,9 +406,9 @@ public class StaticClass {
 		
 		GL30.glBindVertexArray(0);
 		
+		//Listener for all actions.
 		StrokeListener mainListener = new StrokeListener();
 		mainListener.setPositionMatrix();
-		
 		mainDisplay.addFilter(SWT.KeyDown, mainListener);
 		mainDisplay.addFilter(SWT.KeyUp, mainListener);
 		
@@ -424,6 +433,7 @@ public class StaticClass {
 		lightColor.get(lightColorBuffer);
 		objectColor.get(objectColorBuffer);
 		
+		//Schedule 60 hz camera update.
 		TimerTask tickGo = new TimerTask() {
 			public void run() {
 				tickIsGo = true;

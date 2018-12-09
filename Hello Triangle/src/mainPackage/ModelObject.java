@@ -23,7 +23,7 @@ public class ModelObject {
 	public void addFace(ObjectFace face) {
 		faceList.add(face);
 	}
-
+	//Parse model data to get triangles.
 	public float[] getTriangleData() {
 		LinkedList<Float> triangleData = new LinkedList<Float>();
 		
