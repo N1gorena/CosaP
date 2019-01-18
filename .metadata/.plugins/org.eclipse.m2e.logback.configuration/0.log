@@ -13,3 +13,4 @@
 2018-12-11 15:02:56,421 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\guang\Desktop\CosaP\JOML-master\JOML-master\src\main\resources
 2018-12-11 15:02:56,422 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-12-11 15:02:56,422 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\guang\Desktop\CosaP\JOML-master\JOML-master\src\test\resources
+2018-12-11 18:56:55,792 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

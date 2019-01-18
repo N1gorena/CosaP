@@ -82,6 +82,7 @@ public class StaticClass {
 	public static void main(String[] args) {
 		System.out.println("Here We go...");
 		//MODEL LOADING
+		
 		try {
 			//Connect to homebrew server. Download all models available. Use POST
 			URL serverPage = new URL("http://192.168.1.166/modelDump.php");
